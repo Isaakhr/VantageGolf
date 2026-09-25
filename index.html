@@ -358,6 +358,45 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
 .cfg button[aria-pressed="true"]{border-color:var(--gold);transform:scale(1.08)}
 .cfg span{margin-left:6px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-stretch:125%;color:var(--mute)}
 @media (max-width:860px){.cfg{left:10px;top:10px;bottom:auto;gap:4px}.cfg button{width:30px;height:30px}.model-tag{display:none}.model-ctrls{right:10px;bottom:10px}.cfg span{display:none}.hot b{font-size:9px;padding:5px 8px;left:44px;top:-48px}.hot span{width:54px}.hot.flip b{right:44px}.model-ctrls .mbtn{padding:8px 10px}}
+/* buy */
+.buy{padding-block:clamp(40px,8vw,120px)}
+.buy-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;border:1px solid var(--line);border-radius:28px;padding:clamp(16px,3vw,40px);background:linear-gradient(160deg,rgba(38,58,44,.35),rgba(11,13,12,0) 60%)}
+.buy-media{position:relative;border-radius:20px;overflow:hidden;background:#fefefe;aspect-ratio:1}
+.buy-media img{width:100%;height:100%;object-fit:cover;transition:opacity .35s}
+.buy-media img.swap{opacity:0}
+.buy-badge{position:absolute;left:14px;top:14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-stretch:125%;color:#1b1d1c;background:rgba(255,255,255,.8);padding:6px 10px;border-radius:999px}
+.buy-form h2{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:300;margin-block:12px 12px}
+.buy-form h2 strong{font-weight:700}
+.buy-lede{color:var(--mute);max-width:44ch;margin-bottom:22px}
+.buy-field{border:0;padding:0;margin:0 0 18px;min-width:0}
+.buy-field legend,.buy-field .lg{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-stretch:125%;color:var(--mute);margin-bottom:10px;padding:0}
+.buy-field .lg em{font-style:normal;text-transform:none;letter-spacing:0;font-stretch:100%;opacity:.8}
+.buy-field legend span{color:var(--paper)}
+.buy-colors{display:flex;flex-wrap:wrap;gap:8px}
+.buy-colors button{display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 14px 6px 8px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--paper);font:inherit;font-size:13px;cursor:pointer;transition:border-color .2s,background .2s}
+.buy-colors button i{width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.3)}
+.buy-colors button[aria-checked="true"]{border-color:var(--gold);background:rgba(196,162,107,.12)}
+.buy-row{display:flex;flex-wrap:wrap;gap:16px}
+.buy-row .grow{flex:1;min-width:180px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;width:max-content}
+.qty button{width:44px;height:44px;border:0;background:transparent;color:var(--paper);font-size:20px;cursor:pointer}
+.qty input{width:44px;text-align:center;background:transparent;border:0;color:var(--paper);font:inherit;font-size:16px;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#buyName{width:100%;height:46px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--paper);font:inherit;font-size:16px;padding:0 18px}
+#buyName::placeholder{color:#6f736d}
+.buy-list{list-style:none;padding:0;margin:4px 0 24px;display:grid;gap:8px;color:var(--mute);font-size:14px}
+.buy-list li{display:flex;gap:10px;align-items:center}
+.buy-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.btn.wa{width:100%;justify-content:center;padding:18px 22px;font-size:13px;background:var(--gold);color:#0B0D0C}
+.btn.wa:hover{background:var(--paper)}
+.btn.wa svg{width:20px;height:20px}
+.buy-note{margin-top:12px;font-size:12px;color:var(--mute);text-align:center}
+.buy-note .num{color:var(--paper);user-select:all;font-variant-numeric:tabular-nums}
+.wa-fab{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:45;width:52px;height:52px;border-radius:50%;background:var(--gold);color:#0B0D0C;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.7);transform:translateY(90px);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.wa-fab.show{transform:none}
+.wa-fab svg{width:26px;height:26px}
+@media (min-width:861px){.wa-fab{display:none}}
+@media (max-width:860px){.buy-card{grid-template-columns:1fr}.buy-media{aspect-ratio:4/3}}
 /* lifestyle */
 .life{position:relative;margin-block:clamp(40px,6vw,80px) 0;padding-inline:var(--gutter);max-width:1440px;margin-inline:auto}
 .life-frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/9;max-height:86svh;width:100%;background:var(--ink-2)}
@@ -383,6 +422,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
 
 <canvas id="ball" aria-hidden="true"></canvas>
 
+<a class="wa-fab" id="waFab" href="https://wa.me/526643621889" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 <header class="nav" id="nav">
   <div class="nav-in">
     <a class="brand" href="#inicio" aria-label="Vantage Golf, inicio">
@@ -390,9 +430,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
       <b>VANTAGE</b><span>GOLF</span>
     </a>
     <nav class="nav-links" aria-label="Secciones">
-      <a href="#modelo">3D</a><a href="#colores">Colores</a><a href="#galeria">Galería</a><a href="#ficha">Ficha técnica</a>
+      <a href="#modelo">3D</a><a href="#colores">Colores</a><a href="#galeria">Galería</a><a href="#ficha">Ficha técnica</a><a href="#comprar">Comprar</a>
     </nav>
-    <a class="btn small" href="#colores">Elige la tuya</a>
+    <a class="btn small" href="#comprar">Pide la tuya</a>
   </div>
 </header>
 
@@ -601,6 +641,48 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
     </table>
   </section>
 
+  <span class="anchor" data-ball data-o="0" style="width:40px;height:0;margin-left:auto;margin-right:var(--gutter)" aria-hidden="true"></span>
+
+  <section class="buy wrap" id="comprar" aria-labelledby="buy-t">
+    <div class="buy-card">
+      <div class="buy-media">
+        <img id="buyImg" src="img/cap-studio.jpg" alt="Gorra Vantage Golf blanca" width="1400" height="1400">
+        <span class="buy-badge">Performance Rope Golf Cap</span>
+      </div>
+      <form class="buy-form" id="buyForm" novalidate>
+        <p class="eyebrow">Comprar</p>
+        <h2 id="buy-t" class="wide">Hazla <strong>tuya.</strong></h2>
+        <p class="buy-lede">Elige color y cantidad. Te abrimos WhatsApp con tu pedido listo para enviar y te confirmamos precio, disponibilidad y envío.</p>
+        <fieldset class="buy-field">
+          <legend>Color · <span id="buyColorName">Blanca</span></legend>
+          <div class="buy-colors" role="radiogroup" aria-label="Color">
+            <button type="button" role="radio" aria-checked="true" data-c="Blanca" data-img="img/cap-studio.jpg"><i style="background:#f4f4f2"></i><span>Blanca</span></button>
+            <button type="button" role="radio" aria-checked="false" data-c="Negra" data-img="img/black-cap-hd.jpg"><i style="background:#111"></i><span>Negra</span></button>
+            <button type="button" role="radio" aria-checked="false" data-c="Gris claro" data-img="img/gris-claro-frente.jpg"><i style="background:#b9bab8"></i><span>Gris claro</span></button>
+            <button type="button" role="radio" aria-checked="false" data-c="Gris oscuro" data-img="img/gris-oscuro-frente.jpg"><i style="background:#555756"></i><span>Gris oscuro</span></button>
+          </div>
+        </fieldset>
+        <div class="buy-row">
+          <fieldset class="buy-field">
+            <legend>Cantidad</legend>
+            <div class="qty"><button type="button" id="qtyMinus" aria-label="Quitar una">−</button><input id="qty" type="number" inputmode="numeric" min="1" max="50" value="1" aria-label="Cantidad"><button type="button" id="qtyPlus" aria-label="Agregar una">+</button></div>
+          </fieldset>
+          <label class="buy-field grow" for="buyName"><span class="lg">Tu nombre <em>(opcional)</em></span><input id="buyName" type="text" autocomplete="given-name" maxlength="40" placeholder="Ej. Carlos"></label>
+        </div>
+        <ul class="buy-list">
+          <li>Talla única · snapback ajustable</li>
+          <li>Caja premium, bolsa protectora y hangtag</li>
+          <li>Atención directa por WhatsApp</li>
+        </ul>
+        <a class="btn wa" id="waBtn" href="https://wa.me/526643621889" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <p class="buy-note">WhatsApp: <span class="num">+52 664 362 1889</span></p>
+      </form>
+    </div>
+  </section>
+
   <section class="final wrap" aria-label="Vantage Golf">
     <span class="anchor m-only" data-ball data-o="0" style="width:20px;height:0;margin:0 auto" aria-hidden="true"></span>
     <svg class="final-logo" viewBox="7 4 78 116" aria-hidden="true">
@@ -611,7 +693,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
     <p class="word">VANTAGE</p>
     <p class="golf">GOLF</p>
     <p class="tag wide">Rendimiento. Estilo. <span class="serif">Disciplina.</span></p>
-    <div class="cta-row"><a class="btn" href="#colores">Elige tu color <span aria-hidden="true">→</span></a><a class="link" href="#inicio">Volver arriba</a></div>
+    <div class="cta-row"><a class="btn" href="#comprar">Pide la tuya <span aria-hidden="true">→</span></a><a class="link" href="#inicio">Volver arriba</a></div>
   </section>
 
   <footer class="wrap">
@@ -980,6 +1062,37 @@ if(!reduce){
     });
     r.render(sc,cam);
   });
+})();
+
+/* ---------- buy via WhatsApp ---------- */
+(function buy(){
+  const PHONE='526643621889';
+  const btns=[...document.querySelectorAll('.buy-colors button')], img=document.getElementById('buyImg'), nm=document.getElementById('buyColorName');
+  const qty=document.getElementById('qty'), name=document.getElementById('buyName'), wa=document.getElementById('waBtn'), fab=document.getElementById('waFab');
+  let color='Blanca';
+  const clampQ=()=>{ let v=parseInt(qty.value,10); if(!v||v<1) v=1; if(v>50) v=50; qty.value=v; return v; };
+  function msg(fromFab){
+    const q=clampQ(), n=(name.value||'').trim();
+    const lines=[`Hola${n?', soy '+n:''}! Quiero pedir la gorra Vantage Golf Performance Rope.`];
+    if(!fromFab){ lines.push(`• Color: ${color}`, `• Cantidad: ${q}`); }
+    lines.push('¿Me pasas precio, disponibilidad y costo de envío? Gracias.');
+    return `https://wa.me/${PHONE}?text=${encodeURIComponent(lines.join('\n'))}`;
+  }
+  const upd=()=>{ wa.href=msg(false); };
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    color=b.dataset.c; nm.textContent=color;
+    btns.forEach(x=>x.setAttribute('aria-checked',x===b?'true':'false'));
+    img.classList.add('swap'); setTimeout(()=>{ img.src=b.dataset.img; img.alt='Gorra Vantage Golf '+color.toLowerCase(); img.onload=()=>img.classList.remove('swap'); },180);
+    upd();
+  }));
+  document.getElementById('qtyMinus').addEventListener('click',()=>{ qty.value=Math.max(1,clampQ()-1); upd(); });
+  document.getElementById('qtyPlus').addEventListener('click',()=>{ qty.value=Math.min(50,clampQ()+1); upd(); });
+  qty.addEventListener('change',upd); name.addEventListener('input',upd);
+  document.getElementById('buyForm').addEventListener('submit',e=>{ e.preventDefault(); window.open(msg(false),'_blank','noopener'); });
+  fab.href=msg(true); upd();
+  let inBuy=false;
+  ScrollTrigger.create({start:()=>window.innerHeight*0.9,onToggle:s=>fab.classList.toggle('show',s.isActive&&!inBuy)});
+  ScrollTrigger.create({trigger:'#comprar',start:'top bottom',end:'bottom top',onToggle:s=>{ inBuy=s.isActive; fab.classList.toggle('show',!inBuy&&window.scrollY>window.innerHeight*0.9); }});
 })();
 
 /* ---------- 360 spin ---------- */
