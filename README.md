@@ -16,7 +16,6 @@ Sitio oficial de **Vantage Golf · Performance Rope Golf Cap** — *Hecha para e
 | **360°** | Video de ensamblaje controlado por el scroll y luego giro de la gorra en 4 vistas y 4 colores |
 | **Galería** | Carrusel horizontal con tarjetas en 3D |
 | **Ficha técnica** | Especificaciones completas y diagrama del bordado (48 × 60 mm) |
-| **Empaque / Próximos colores** | Caja premium, bolsa, papel de seda, hangtag y futuras versiones |
 | **Legal** | Aviso de privacidad, términos y condiciones, envíos y devoluciones |
 
 ## Tecnología

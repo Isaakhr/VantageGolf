@@ -346,7 +346,8 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
 /* lifestyle */
 .life{position:relative;margin-block:clamp(40px,6vw,80px) 0;padding-inline:var(--gutter);max-width:1440px;margin-inline:auto}
 .life-frame{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/9;max-height:86svh;width:100%;background:var(--ink-2)}
-.life-frame img{position:absolute;left:0;top:-7%;width:100%;height:114%;object-fit:cover;object-position:50% 35%;will-change:transform}
+.life-frame picture{position:absolute;inset:0}
+.life-frame img{position:absolute;left:0;top:-7%;width:100%;height:114%;object-fit:cover;object-position:50% 40%;will-change:transform}
 .life-frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:inherit;background:linear-gradient(0deg,rgba(8,10,9,.35),transparent 30%);pointer-events:none}
 .life-copy{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,4vw,64px);align-items:end;padding-top:clamp(24px,3vw,40px)}
 .life-copy h2{font-size:clamp(2rem,4.6vw,4.2rem);font-weight:300;margin-top:14px}
@@ -355,7 +356,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
 .life-copy > p{color:var(--mute);max-width:40ch}
 @media (max-width:760px){
   .life-frame{aspect-ratio:4/5;max-height:none}
-  .life-frame img{object-position:47% 40%}
+  .life-frame img{object-position:50% 55%}
   .life-copy{grid-template-columns:1fr;gap:14px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -374,7 +375,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
       <b>VANTAGE</b><span>GOLF</span>
     </a>
     <nav class="nav-links" aria-label="Secciones">
-      <a href="#modelo">3D</a><a href="#colores">Colores</a><a href="#galeria">Galería</a><a href="#ficha">Ficha técnica</a><a href="#empaque">Empaque</a>
+      <a href="#modelo">3D</a><a href="#colores">Colores</a><a href="#galeria">Galería</a><a href="#ficha">Ficha técnica</a>
     </nav>
     <a class="btn small" href="#colores">Elige la tuya</a>
   </div>
@@ -524,14 +525,17 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
 
   <section class="life" aria-labelledby="life-t">
     <div class="life-frame" id="lifeFrame">
-      <img src="img/lifestyle-teens.jpg" alt="Dos golfistas adolescentes en el campo al atardecer con la gorra Vantage Golf blanca; él termina su swing y ella sonríe con su driver">
+      <picture>
+        <source media="(max-width:760px)" srcset="img/lifestyle-v.jpg">
+        <img src="img/lifestyle-h.jpg" alt="Dos golfistas adolescentes caminando por el fairway al atardecer con la gorra Vantage Golf blanca" loading="lazy">
+      </picture>
     </div>
     <div class="life-copy">
       <div>
         <p class="eyebrow">En el campo</p>
         <h2 id="life-t" class="wide">Del primer tee <span class="serif">al hoyo</span> <strong>18.</strong></h2>
       </div>
-      <p>Ligera y transpirable para toda la ronda, desde el calentamiento hasta el último putt. Hecha para la nueva generación del golf.</p>
+      <p>Ligera y transpirable para toda la ronda, desde el calentamiento hasta el último putt.</p>
     </div>
   </section>
 
@@ -579,37 +583,6 @@ footer{border-top:1px solid var(--line);padding-block:26px;display:flex;flex-wra
         <tr><th scope="row">Etiqueta lateral</th><td>Tejida con logo · 25 × 25 mm</td></tr>
       </tbody>
     </table>
-  </section>
-
-  <section class="pack wrap" id="empaque" aria-labelledby="pack-t">
-    <div class="pack-head">
-      <div><p class="eyebrow">Empaque</p><h2 id="pack-t" class="wide" style="margin-top:14px">Llega como <strong>se merece.</strong></h2></div>
-      <p>Cada gorra viene en caja premium negra con bolsa protectora, papel de seda con monograma y hangtag.</p>
-    </div>
-    <div class="pack-grid">
-      <span class="anchor" data-ball data-om="0" aria-hidden="true"></span>
-      <figure class="rv"><div class="ph"><img src="img/box.jpg" alt="Caja premium negra con logo dorado"></div><figcaption>Caja premium<span>Negra, logo en dorado.</span></figcaption></figure>
-      <figure class="rv"><div class="ph"><img src="img/bag.jpg" alt="Bolsa protectora negra con cordón"></div><figcaption>Bolsa protectora<span>Para guardarla en el bag.</span></figcaption></figure>
-      <figure class="rv"><div class="ph"><img src="img/tissue.jpg" alt="Papel de seda blanco con el monograma de Vantage"></div><figcaption>Papel de seda<span>Con monograma Vantage.</span></figcaption></figure>
-      <figure class="rv"><div class="ph"><img src="img/hangtag.jpg" alt="Hangtag negro y dorado con íconos de tecnología"></div><figcaption>Hangtag<span>Con las 5 tecnologías.</span></figcaption></figure>
-    </div>
-  </section>
-
-  <section class="next wrap" aria-labelledby="next-t">
-    <div class="next-box">
-      <div>
-        <p class="eyebrow">Próximamente</p>
-        <h3 id="next-t" class="wide" style="margin-top:12px">Futuras <strong>versiones.</strong></h3>
-        <p>Nuevas combinaciones de color en camino, con el mismo perfil y las mismas tecnologías.</p>
-      </div>
-      <div class="next-list">
-        <figure class="rv"><div class="ph"><img src="img/next-blanco-negro.jpg" alt="Gorra blanca con negro"></div><figcaption>Blanco / Negro</figcaption></figure>
-        <figure class="rv"><div class="ph"><img src="img/next-negro-blanco.jpg" alt="Gorra negra con blanco"></div><figcaption>Negro / Blanco</figcaption></figure>
-        <figure class="rv"><div class="ph"><img src="img/next-azul-blanco.jpg" alt="Gorra azul marino con blanco"></div><figcaption>Azul marino / Blanco</figcaption></figure>
-        <figure class="rv"><div class="ph"><img src="img/next-gris-negro.jpg" alt="Gorra gris con negro"></div><figcaption>Gris / Negro</figcaption></figure>
-        <figure class="rv"><div class="ph"><img src="img/next-olivo-negro.jpg" alt="Gorra verde olivo con negro"></div><figcaption>Verde olivo / Negro</figcaption></figure>
-      </div>
-    </div>
   </section>
 
   <section class="final wrap" aria-label="Vantage Golf">
